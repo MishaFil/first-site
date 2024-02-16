@@ -10,10 +10,10 @@ def login_user(request):
         user = authenticate(request, username=username, password=password)
         if user is not None:
             login(request, user)
-            return redirect('')
+            return redirect('shop:index')
         else:
             messages.success(request, 'Неверный логин или пароль')
-            return redirect('')
+            return redirect('shop:index')
 
     
     else:
